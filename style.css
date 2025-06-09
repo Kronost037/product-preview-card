@@ -1,0 +1,165 @@
+:root {
+  --ff-Mon: Montserrat;
+  --ff-Fra: Fraunces;
+
+  --fw-bold: 700;
+  --fw-normal: 500;
+
+  --clr-primary: hsl(158, 36%, 37%);
+  --clr-accent: hsl(158, 42%, 18%);
+
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-300: hsl(30, 38%, 92%);
+  --clr-neutral-600: hsl(228, 12%, 48%);
+  --clr-neutral-900: hsl(212, 21%, 14%);
+}
+
+/* || RESET || */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* || SETUP || */
+
+body {
+  min-height: 100vh;
+
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-600);
+
+  font-family: var(--ff-Fra);
+}
+
+h1 {
+  color: var(--clr-neutral-900);
+
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+
+  line-height: 1;
+
+  margin-block: 1rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: var(--fw-normal);
+
+  text-transform: uppercase;
+  letter-spacing: 0.6ch;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.button {
+  display: block;
+
+  background-color: var(--clr-primary);
+  color: var(--clr-neutral-100);
+
+  text-align: center;
+  white-space: nowrap;
+
+  font-family: var(--ff-Mon);
+  font-size: 1.1rem;
+  font-weight: var(--fw-bold);
+
+  padding-block: 1.2rem;
+
+  border-radius: 0.8rem;
+}
+
+.button:hover {
+  background-color: var(--clr-accent);
+}
+
+/* || CART || */
+
+.cart {
+  max-width: 770px;
+
+  background-color: var(--clr-neutral-100);
+
+  margin: 1.5rem 1rem;
+
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.cart__content {
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart p {
+  font-family: var(--ff-Mon);
+  font-size: 1.2rem;
+  font-weight: var(--fw-normal);
+}
+
+.price {
+  margin-block: 2rem;
+
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary);
+
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.cross {
+  font-size: 1.12rem;
+  font-weight: var(--fw-normal);
+  
+  color: var(--clr-neutral-600);
+  text-decoration: line-through;
+}
+
+/* || CART Image in Button || */
+
+.cart .button::before {
+  content: "";
+  display: inline-block;
+  width: 1.4rem;
+  aspect-ratio: 1;
+  background-image: url(./images/icon-cart.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative;
+  top: 0.2rem;
+  left: -0.5rem;
+}
+
+@media (min-width: 600px) {
+  body {
+    display: grid;
+    place-content: center;
+  }
+
+  .cart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
